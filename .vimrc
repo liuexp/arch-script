@@ -63,7 +63,6 @@ colorscheme solarized
 let g:haskell_conceal_wide = 1
 "nerdtree
 autocmd vimenter * if !argc() | NERDTree | endif
-autocmd vimenter * if !argc() | set encoding=utf8 | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 filetype plugin on
