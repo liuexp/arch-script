@@ -1,0 +1,20 @@
+#!/bin/sh
+[ -f ~/.xprofile ] && . ~/.xprofile
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+trayer --edge top --align right --SetDockType true --SetPartialStrut true \
+	  --expand true --width 9  --transparent true --tint 0x444444 --alpha 0 --distance 0 --padding 0 --height 21 &
+#stalonetray -i 17  --icon-gravity E --geometry 7x1-0+0 -bg '#2e3436' --sticky --skip-taskbar --kludges force_icons_size &
+xscreensaver -no-splash &
+xset -b
+#nitrogen --restore
+if [ -x /usr/bin/nm-applet ] ; then
+    nm-applet --sm-disable &
+fi
+/usr/lib/gnome-settings-daemon/gnome-settings-daemon &
+/usr/lib/xfce4/notifyd/xfce4-notifyd &
+gnome-sound-applet &
+ibus-daemon -xrd &
+mpd --kill 
+mpd &
+# start xmonad
+exec ck-launch-session dbus-launch --sh-syntax --exit-with-session xmonad

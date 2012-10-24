@@ -1,0 +1,17 @@
+Config { font = "xft:WenQuanYi Zen Hei Sharp:pixelsize=13"
+       , bgColor = "black"
+       , fgColor = "grey"
+       , position = TopW L 91
+       , lowerOnStart = True
+       , commands = [ Run StdinReader
+                    , Run Weather "ZSSS" ["-t","<tempC>C","-L","18","-H","25","--normal","green","--high","red","--low","lightblue"] 36000
+                    , Run MultiCpu ["-t","<total>%","-L","3","-H","50","--normal","green","--high","red"] 10
+                    , Run Memory ["-t","<usedratio>%"] 10
+                    , Run MPD ["-t","<title>(<album>):<statei>", "--", "-P", ">>", "-Z", "|", "-S", "><"] 10
+                    , Run Com "uname" ["-n"] "" 36000
+		    , Run Date "%a %b %d %Y %H:%M" "date" 600
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = " %StdinReader%}{ %mpd% | %memory% %ZSSS% <fc=#ee9a00>%date%</fc> %uname% "
+       }

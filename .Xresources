@@ -1,0 +1,9 @@
+URxvt.perl-ext-common:  default,url-select
+URxvt.keysym.M-u:       perl:url-select:select_next
+URxvt.urlLauncher:      firefox
+URxvt.underlineURLs:    true
+
+xterm*utf8: 1
+xterm*faceName: Monaco for Powerline:antialias=True:pixelsize=12
+xterm*faceNameDoublesize: 文泉驛點陣正黑:pixelsize=12:antialias=True
+

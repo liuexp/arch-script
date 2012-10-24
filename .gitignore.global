@@ -1,0 +1,9 @@
+*.o
+*.so
+*.swp
+*.class
+*.hi
+*.aux
+*.log
+*~
+*.bak
