@@ -30,7 +30,7 @@ Bundle 'liuexp/snipmate-snippets'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'osyo-manga/neocomplcache-clang_complete'
 Bundle 'Lokaltog/vim-powerline'
-Bundle ''
+Bundle 'mattn/zencoding-vim'
 " Pick either python-mode or pyflakes & pydoc
 Bundle 'klen/python-mode'
 Bundle 'python.vim'
@@ -39,7 +39,6 @@ Bundle 'pythoncomplete'
 "--end of vundle
 
 syntax on
-syntax enable
 filetype on
 
 set guifont=Monaco\ for\ Powerline
@@ -48,12 +47,12 @@ let g:Powerline_symbols = 'fancy'
 if filereadable(expand("~/.vim/bundle/snipmate-snippets/snippets/support_functions.vim"))
     source ~/.vim/bundle/snipmate-snippets/snippets/support_functions.vim
 endif
-let g:solarized_termcolors=256
-set t_Co=256
 set background=dark
 if has('gui_running')
 	set background=dark
 else
+	let g:solarized_termcolors=256
+	set t_Co=256
 	set background=light
 endif
 colorscheme solarized

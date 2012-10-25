@@ -9,7 +9,7 @@
  # Workaround for tmux which resets the LANG
 [[ "$LANG" == "C" ]] && export LANG="en_US.utf8"
 
-export TERM="xterm-256color"
+#export TERM="xterm-256color"
 alias tmux="tmux -2"
 alias l='ls -a'
 alias ll='ls -l'
